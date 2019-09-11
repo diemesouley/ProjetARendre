@@ -1,0 +1,65 @@
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <span class="anchor" id="formLogin"></span>
+
+            <!-- form card login -->
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <h3 class="mb-0">Transaction</h3>
+                </div>
+                <div class="card-body">
+                    <form #unForm=ngForm (ngSubmit)="OnSubmit(username, password,matriculeUser,nomUser,prenomUser,emailUser,telephoneUser,adresseUser,statusUser,Image)">
+                        <div class="form-group">
+                            <label for="">Montant</label>
+                            <input ngModel #montant name="montant" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Type Transaction</label>
+                            <input ngModel #nomTransaction name="nomTransaction" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nom Envoyeur</label>
+                            <input ngModel #nomEnvoyeur name="nomEnvoyeur" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Penom Envoyeur</label>
+                            <input ngModel #prenomEnvoyeur name="prenomEnvoyeur" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Telephone Envoyeur</label>
+                            <input ngModel #telephoneEnvoyeur name="telephoneEnvoyeur" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Numero CI</label>
+                            <input ngModel #nCI name="nCI" type="text" class="form-control rounded-0" required="eg: diemesouley@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Nom Recepteur</label>
+                            <input ngModel #nomRecepteur name="nomRecepteur" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Prenom Recepteur</label>
+                            <input ngModel #prenomRecepteur name="prenomRecepteur" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Telephone Recepteur</label>
+                            <input ngModel #telephoneRecepteur name="telephoneRecepteur" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Numero CI Recepteur</label>
+                            <input ngModel #nCIRecepteur name="nCIRecepteur" type="text" class="form-control rounded-0" required="eg: diemesouley@gmail.com">
+                        </div>
+
+                        <button type="submit" [disabled]=!unForm.valid class="btn btn-primary float-right">Register</button>
+                    </form>
+                </div>
+                <!--/card-block-->
+            </div>
+            <!-- /form card login -->
+
+        </div>
+
+
+    </div>
+</div>

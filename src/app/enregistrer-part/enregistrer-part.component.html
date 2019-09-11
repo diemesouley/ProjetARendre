@@ -1,0 +1,103 @@
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <span class="anchor" id="formLogin"></span>
+
+            <!-- form card login -->
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <h3 class="mb-0">Enregistrer</h3>
+                </div>
+                <div class="card-body">
+                    <form #unForm=ngForm (ngSubmit)="OnSubmit(matricule,nomPartenaire,ninea,emailPartenaire,adressePartenaire,telephonePartenaire,status,username,password,matriculeUser,nomUser,prenomUser,emailUser,telephoneUser,adresseUser,statusUser,Image)">
+                        <div class="form-group">
+                            <label for="">Matricule</label>
+                            <input [(ngModel)]="matricule" name="matricule" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">NomPartenaire</label>
+                            <input [(ngModel)]="nomPartenaire" name="nomPartenaire" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ninea</label>
+                            <input [(ngModel)]="ninea" name="ninea" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">EmailPartenaire</label>
+                            <input [(ngModel)]="emailPartenaire" name="emailPartenaire" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">AdressePartenaire</label>
+                            <input [(ngModel)]="adressePartenaire" name="adressePartenaire" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">telephonePartenaire</label>
+                            <input [(ngModel)]="telephonePartenaire" name="telephonePartenaire" type="NUMBER" class="form-control rounded-0">
+                        </div>
+                        <div class="form-group">
+                            <label for="uname1">StatusPartenaire</label>
+                            <select [(ngModel)]="status" name="statusUser" id="">
+                                  <option value="Activé">Activé</option>
+                                  <option value="Désactivé">Désactivé</option>
+                              </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Username</label>
+                            <input [(ngModel)]="username" name="username" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">password</label>
+                            <input [(ngModel)]="password" name="password" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">roles</label>
+                            <input [(ngModel)]="roles" name="roles" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">matriculeUser</label>
+                            <input [(ngModel)]="matriculeUser" name="matriculeUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">nomUser</label>
+                            <input [(ngModel)]="nomUser" name="nomUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">prenomUser</label>
+                            <input [(ngModel)]="prenomUser" name="username" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">EmailUser</label>
+                            <input [(ngModel)]="emailUser" name="emailUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>telephoneUser</label>
+                            <input [(ngModel)]="telephoneUser" name="telephoneUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>AdresseUser</label>
+                            <input [(ngModel)]="adresseUser" name="adresseUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="uname1">StatusUser</label>
+                            <select [(ngModel)]="statusUser" name="statusUser" id="">
+                                  <option value="Activé">Activé</option>
+                                  <option value="Désactivé">Désactivé</option>
+                              </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Photo</label>
+                            <img [src]="imageUrl" alt="" style="width:200px; height:200px;">
+                            <input #Image type="file" accept="image/*" class="form-control rounded-0" required (change)="handleFileInput($event.target.files)">
+                        </div>
+                        <button type="submit" [disabled]=!unForm.valid class="btn btn-primary float-right">Register</button>
+                    </form>
+                </div>
+                <!--/card-block-->
+            </div>
+            <!-- /form card login -->
+
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <span class="anchor" id="formLogin"></span>
+
+            <!-- form card login -->
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <h3 class="mb-0">Register</h3>
+                </div>
+                <div class="card-body">
+                    <form #unForm=ngForm (ngSubmit)="OnSubmit(username, password,matriculeUser,nomUser,prenomUser,emailUser,telephoneUser,adresseUser,statusUser,Image)">
+                        <div class="form-group">
+                            <label for="">username</label>
+                            <input ngModel #username name="username" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input ngModel #password name="password" type="password" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>MatriculeUser</label>
+                            <input ngModel #matriculeUser name="matriculeUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>NomUser</label>
+                            <input ngModel #nomUser name="nomUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>PrenomUser</label>
+                            <input ngModel #prenomUser name="prenomUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>EmailUser</label>
+                            <input ngModel #emailUser name="emailUser" type="text" class="form-control rounded-0" required="eg: diemesouley@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Telephone</label>
+                            <input ngModel #telephoneUser name="telephoneUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>AdresseUser</label>
+                            <input ngModel #adresseUser name="adresseUser" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="uname1">StatusUser</label>
+                            <select ngModel #statusUser name="statusUser" id="">
+                                    <option value="Activé">Activé</option>
+                                    <option value="Désactivé">Désactivé</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Photo</label>
+                            <img [src]="imageUrl" alt="" style="width:200px; height:200px;">
+                            <input #Image type="file" accept="image/*" class="form-control rounded-0" required (change)="handleFileInput($event.target.files)">
+                        </div>
+                        <button type="submit" [disabled]=!unForm.valid class="btn btn-primary float-right">Register</button>
+                    </form>
+                </div>
+                <!--/card-block-->
+            </div>
+            <!-- /form card login -->
+
+        </div>
+
+
+    </div>
+</div>
